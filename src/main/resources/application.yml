@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-ai-demo
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    openai:
+      base-url: ${AI_BASE_URL:https://api.groq.com/openai}
+      api-key: ${AI_API_KEY:}
+      chat:
+        options:
+          model: ${AI_MODEL:openai/gpt-oss-120b}
+          temperature: 0.7
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080

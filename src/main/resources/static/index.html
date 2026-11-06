@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f6">
+    <title>Spring AI Chat Demo</title>
+    <link rel="stylesheet" href="/chat.css">
+</head>
+<body>
+<main class="chat-app">
+    <header class="chat-header">
+        <a class="brand" href="/" aria-label="Spring AI Chat Demo">
+            <span class="brand-mark">S</span>
+            <span>Spring AI <span class="brand-subtitle">Chat Demo</span></span>
+        </a>
+        <div class="header-actions">
+            <span class="model-badge"><span class="status-dot"></span>Groq · RAG</span>
+            <button class="new-chat" id="new-chat" type="button" title="Cuộc trò chuyện mới" aria-label="Cuộc trò chuyện mới">＋</button>
+        </div>
+    </header>
+    <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">Xin chào! Hãy nhập câu hỏi để bắt đầu trò chuyện.</div>
+        <div class="messages" id="messages"></div>
+    </section>
+    <footer class="composer-wrap">
+        <div class="document-list" id="document-list" aria-live="polite"></div>
+        <p class="upload-status" id="upload-status" role="status"></p>
+        <div class="composer">
+            <label class="sr-only" for="message">Tin nhắn</label>
+            <textarea id="message" rows="1" maxlength="4000" placeholder="Nhập tin nhắn..." autofocus></textarea>
+            <div class="composer-tools">
+                <div class="mode-control">
+                    <span class="mode-sparkle">✳</span>
+                    <select id="mode" aria-label="Chọn tác vụ">
+                        <option value="chat">Trò chuyện</option>
+                        <option value="explain">Giải thích</option>
+                        <option value="summarize">Tóm tắt</option>
+                        <option value="translate">Dịch tiếng Anh</option>
+                        <option value="ideas">Gợi ý ý tưởng</option>
+                    </select>
+                    <span class="chevron">⌄</span>
+                </div>
+                <input class="sr-only" id="pdf-upload" type="file" accept=".pdf,application/pdf">
+                <button class="attach-button" id="attach-pdf" type="button" title="Tải PDF để hỏi đáp" aria-label="Tải PDF">📎 PDF</button>
+                <span class="hint">Enter để gửi · Shift + Enter xuống dòng</span>
+                <button class="send-button" id="send" type="button" aria-label="Gửi tin nhắn">↑</button>
+            </div>
+        </div>
+        <p class="disclaimer">Spring AI · PDF RAG · Tối đa 10 MB mỗi tệp</p>
+    </footer>
+</div>
+<script src="/app.js" defer></script>
+</body>
+</html>
